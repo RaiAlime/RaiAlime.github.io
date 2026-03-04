@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Register - CES JEZ POWERTOOLS</title>
+
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+
+<style>
+body{
+    font-family:Arial, sans-serif;
+    background:#fff8e1;
+}
+
+.container{
+    max-width:500px;
+    margin:80px auto;
+    background:#fff3e0;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 0 15px #b8860b;
+}
+
+h2{
+    text-align:center;
+    color:red;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border-radius:8px;
+    border:1px solid #ccc;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    background:red;
+    color:white;
+    border:none;
+    border-radius:25px;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Create Account</h2>
+
+   <form action="index.html">
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <input type="password" id="confirm" placeholder="Confirm Password" required>
+        <button type="submit">Register</button>
+    </form>
+
+    <p id="message" style="text-align:center; margin-top:15px;"></p>
+</div>
+
+<script>
+function registerUser(e){
+    e.preventDefault();
+
+    let password = document.getElementById("password").value;
+    let confirm = document.getElementById("confirm").value;
+    let message = document.getElementById("message");
+
+    if(password !== confirm){
+        message.innerText = "Passwords do not match!";
+        return;
+    }
+
+    message.innerText = "Registration Successful! Redirecting...";
+
+    setTimeout(function(){
+        window.location.href = "index.html";
+    },1500);
+}
+</script>
+
+</body>
+</html>
